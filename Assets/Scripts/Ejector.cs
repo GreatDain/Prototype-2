@@ -26,7 +26,7 @@ public class Ejector : MonoBehaviour
     public void RetrieveBall()
     {
         _ball.position = transform.position;
-        _ball.up = transform.up;
+        _ball.rotation = transform.rotation;
         ejected = false;
     }
 
