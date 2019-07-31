@@ -7,7 +7,7 @@ public class Ejector : MonoBehaviour
 {
 
     private Transform _ball;
-    private Rigidbody2D _rb;
+    private Rigidbody _rb;
 
     [SerializeField] KeyCode _ejectKey = KeyCode.Space;
 
@@ -19,7 +19,7 @@ public class Ejector : MonoBehaviour
     void Start()
     {
         _ball = FindObjectOfType<Ball>().transform;
-        _rb = _ball.GetComponent<Rigidbody2D>();
+        _rb = _ball.GetComponent<Rigidbody>();
         RetrieveBall();
     }
 
