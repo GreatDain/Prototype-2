@@ -104,6 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8599922685210427748}
   - component: {fileID: 9065142610565595190}
+  - component: {fileID: 7444191411304494096}
   m_Layer: 0
   m_Name: Eyeball
   m_TagString: Untagged
@@ -139,3 +140,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7444191411304494096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599922685210427749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a90cf2a943d2242a539396239e1c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Score: 0
+  _PlayerSpeedMultierThreshHold: 0

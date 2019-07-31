@@ -14,6 +14,8 @@ public class Paddle : MonoBehaviour
     Quaternion _IdleRotation;
 
     [SerializeField] float RotationSpeed = 10f;
+    [SerializeField] Rigidbody _rigidbody;
+    [SerializeField] Transform _forcePostion;
 
     private void Awake()
     {
@@ -35,14 +37,15 @@ public class Paddle : MonoBehaviour
 
     void ActivatePaddle()
     {
-        Quaternion currentRotation = transform.rotation;
+        Quaternion currentRotation = transform.localRotation;
         if (Input.GetKey(_ActivateKey))
         {
-            transform.rotation = Quaternion.Slerp(currentRotation, _ActivatedRotation, Time.deltaTime * RotationSpeed);
+            //transform.localRotation = Quaternion.Slerp(currentRotation, _ActivatedRotation, Time.deltaTime * RotationSpeed);
+            _rigidbody.AddForceAtPosition(_forcePostion.up * 1000f, _forcePostion.position);
         }
         else
         {
-            transform.rotation = Quaternion.Slerp(currentRotation, _IdleRotation, Time.deltaTime * RotationSpeed);
+            //transform.localRotation = Quaternion.Slerp(currentRotation, _IdleRotation, Time.deltaTime * RotationSpeed);
         }
     }
 }

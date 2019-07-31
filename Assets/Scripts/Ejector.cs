@@ -37,12 +37,13 @@ public class Ejector : MonoBehaviour
             if (Input.GetKeyDown(_ejectKey))
             {
                 float force = UnityEngine.Random.Range(_minForce, _maxForce);
-                _rb.AddForce(Vector2.up * force);
+                _rb.AddForce(transform.up * force);
                 ejected = true;
             }
             else
             {
                 _ball.position = transform.position;
+                _ball.rotation = transform.rotation;
             }
         }
     }
@@ -52,7 +53,7 @@ public class Ejector : MonoBehaviour
         EjectBall();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         RetrieveBall();        
     }
