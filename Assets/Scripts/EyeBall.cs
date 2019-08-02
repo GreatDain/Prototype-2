@@ -18,9 +18,12 @@ public class EyeBall : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
-        int multi = Mathf.Max(1,(int)col.GetComponent<Rigidbody>().velocity.magnitude / _PlayerSpeedMultierThreshHold);
-        ScoreManager._ScoreManager.AddScore(_Score, multi);
+        if (col.gameObject.tag == "Player")
+        {
+            int multi = Mathf.Max(1, (int)col.gameObject.GetComponent<Rigidbody>().velocity.magnitude / _PlayerSpeedMultierThreshHold);
+            ScoreManager._ScoreManager.AddScore(_Score, multi);
+        }
     }
 }

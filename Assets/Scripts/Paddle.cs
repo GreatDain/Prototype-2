@@ -48,4 +48,12 @@ public class Paddle : MonoBehaviour
             //transform.localRotation = Quaternion.Slerp(currentRotation, _IdleRotation, Time.deltaTime * RotationSpeed);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+
+        }
+    }
 }

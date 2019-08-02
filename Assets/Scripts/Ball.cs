@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag != "Background")
+        {
+            if (collision.gameObject.tag == "Heart" || collision.gameObject.tag == "Eye")
+                SoundManager.Manager.PlaySound(SoundManager.Manager.heart);
+            else if (collision.gameObject.tag == "Paddle")
+                SoundManager.Manager.PlaySound(SoundManager.Manager.paddle);
+            else
+                SoundManager.Manager.PlaySound(SoundManager.Manager.wall);
+        }
     }
 }

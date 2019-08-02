@@ -25,6 +25,7 @@ public class Ejector : MonoBehaviour
 
     public void RetrieveBall()
     {
+        ScoreManager._ScoreManager.ResetScore();
         _ball.position = transform.position;
         _ball.rotation = transform.rotation;
         ejected = false;
