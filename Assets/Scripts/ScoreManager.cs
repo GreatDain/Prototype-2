@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
 
     [SerializeField] TextMeshProUGUI _scoreText;
+    [SerializeField] GameObject _speedUp;
 
     int _score = 0;
     int _currentScore = 0;
@@ -36,7 +37,7 @@ public class ScoreManager : MonoBehaviour
         while (_currentScore > 0)
         {
             _currentScore -= 1;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.002f);
             _scoreText.text = "Score: " + _currentScore.ToString();
         }
         yield return null;
@@ -46,6 +47,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad > 1f)
         {
+            _speedUp.gameObject.SetActive(false);
             _score = 0;
             SoundManager.Manager.PlaySound(SoundManager.Manager.gameOver);
             StartCoroutine(DecreaseScore());
@@ -62,5 +64,13 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player" && Time.timeSinceLevelLoad > 1f)
+        {
+            _speedUp.gameObject.SetActive(true);
+        }
     }
 }
