@@ -16,13 +16,18 @@ public class EXIT : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape)) {
 
-            Application.Quit();
+            SceneManager.LoadScene(2);
 
         }
 
         if (Input.GetKey(KeyCode.R)) {
 
             SceneManager.LoadScene(1);
+        }
+
+        if (Input.GetKey(KeyCode.Backspace)) {
+            SceneManager.LoadScene("Menu");
+
         }
     }
 }

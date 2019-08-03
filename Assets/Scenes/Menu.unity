@@ -738,7 +738,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: PRESS ESCAPE KEY TO EXIT GAME.
+  m_Text: 'PRESS BACKSPACE TO RETURN TO MENU
+
+    PRESS ESCAPE KEY TO EXIT GAME.'
 --- !u!222 &1174181433
 CanvasRenderer:
   m_ObjectHideFlags: 0
