@@ -38,6 +38,7 @@ public class Ejector : MonoBehaviour
             if (Input.GetKeyDown(_ejectKey))
             {
                 float force = UnityEngine.Random.Range(_minForce, _maxForce);
+                _rb.velocity = Vector3.zero;
                 _rb.AddForce(transform.up * force);
                 ejected = true;
             }

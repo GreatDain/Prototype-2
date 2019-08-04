@@ -26,8 +26,8 @@ public class ScoreManager : MonoBehaviour
         while(_currentScore != _score)
         {
             _currentScore += 1;
-            yield return new WaitForSeconds(0.1f);
             _scoreText.text = "Score: " + _currentScore.ToString();
+            yield return new WaitForSeconds(0.05f);
         }
         yield return null;
     }
@@ -58,12 +58,11 @@ public class ScoreManager : MonoBehaviour
     {
         if(_ScoreManager == null)
                 _ScoreManager = this;
-        AddScore(0, 0);
+        _scoreText.text = "Score: " + _score.ToString();
     }
 
     void Update()
     {
-        
     }
 
     private void OnTriggerEnter(Collider other)
